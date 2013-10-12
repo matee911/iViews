@@ -1,0 +1,2 @@
+Implement in python distributed semaphore.
+Interface should be the same as in built-in semaphore (http://docs.python.org/2/library/threading.html#semaphore-objects), but it must works in distributed environment (many threads on many servers).
