@@ -1,34 +1,39 @@
 # coding: utf-8
 
-import threading
-import redis
-import time
-# http://hg.python.org/cpython/file/2.7/Lib/threading.py
+"""
+Module contains distributed semaphore implementation,
+which needs to work redis server (as it acts as master counter).
+It doesn't implement standard semaphore API, because then in each
+worker could be initialized with different value.
+"""
 
-class RedisSemaphore(threading._Semaphore):
+import threading
+import time
+import redis
+
+# pylint: disable=R0924,W0212
+class DistributedSemaphore(threading._Semaphore):
+    """Distributed semaphore class
+    which uses redis as a master state controller"""
     def __init__(self):
-        self.r = redis.StrictRedis()
-        self.cond = threading.Condition()
+        super(DistributedSemaphore, self).__init__(self)
+        self.redis = redis.StrictRedis()
 
     def acquire(self, blocking=True):
-        rc = False
-        while self.r.rpop('sem') == None:
+        acquired = False
+        while self.redis.rpop('sem') == None:
             if not blocking:
                 break
             time.sleep(0.0005)
         else:
-            rc = True
-        return rc
+            acquired = True
+        return acquired
 
     __enter__ = acquire # with statement compatible
 
     def release(self):
-        self.r.rpush('sem', 1)
+        self.redis.rpush('sem', 1)
 
     def __exit__(self, t, v, tb):
         self.release()
-
-if __name__ == '__main__':
-    s = RedisSemaphore()
-    s.acquire()
 
