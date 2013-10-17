@@ -20,7 +20,7 @@ def slow_socket(msg):
     sck.connect((const.MASTER_HOST, 7000))
     for c in msg:
         sck.send(c)
-        time.sleep(random.randint(5, 9)/100)
+        time.sleep(random.randint(2, 9)/100)
     sck.close()
 
 

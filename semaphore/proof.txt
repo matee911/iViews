@@ -1,0 +1,72 @@
+root@semaphoremaster:~/semaphore# python master.py 
+Semaphore counter is set to: 1
+1382030238.7 ThreadName:T0 Count:0 ExternalIP:162.243.61.214
+1382030243.27 ThreadName:T1 Count:0 ExternalIP:162.243.61.214
+1382030247.56 ThreadName:T2 Count:0 ExternalIP:162.243.61.214
+1382030251.93 ThreadName:T0 Count:1 ExternalIP:162.243.61.214
+1382030256.43 ThreadName:T0 Count:0 ExternalIP:162.243.61.201
+1382030260.74 ThreadName:T2 Count:0 ExternalIP:162.243.61.201
+1382030265.1 ThreadName:T0 Count:1 ExternalIP:162.243.61.201
+1382030269.67 ThreadName:T1 Count:0 ExternalIP:162.243.61.201
+1382030274.17 ThreadName:T2 Count:1 ExternalIP:162.243.61.214
+1382030278.72 ThreadName:T2 Count:1 ExternalIP:162.243.61.201
+1382030283.27 ThreadName:T0 Count:2 ExternalIP:162.243.61.214
+1382030287.74 ThreadName:T2 Count:2 ExternalIP:162.243.61.201
+1382030292.22 ThreadName:T0 Count:3 ExternalIP:162.243.61.214
+1382030296.63 ThreadName:T1 Count:1 ExternalIP:162.243.61.214
+1382030301.19 ThreadName:T0 Count:4 ExternalIP:162.243.61.214
+1382030305.65 ThreadName:T2 Count:3 ExternalIP:162.243.61.201
+1382030310.13 ThreadName:T2 Count:2 ExternalIP:162.243.61.214
+1382030314.6 ThreadName:T1 Count:2 ExternalIP:162.243.61.214
+1382030319.13 ThreadName:T2 Count:4 ExternalIP:162.243.61.201
+1382030323.5 ThreadName:T2 Count:3 ExternalIP:162.243.61.214
+1382030327.76 ThreadName:T0 Count:5 ExternalIP:162.243.61.214
+1382030332.33 ThreadName:T0 Count:2 ExternalIP:162.243.61.201
+1382030336.91 ThreadName:T0 Count:6 ExternalIP:162.243.61.214
+1382030341.48 ThreadName:T2 Count:5 ExternalIP:162.243.61.201
+1382030346.02 ThreadName:T1 Count:3 ExternalIP:162.243.61.214
+1382030350.68 ThreadName:T1 Count:1 ExternalIP:162.243.61.201
+1382030355.37 ThreadName:T0 Count:3 ExternalIP:162.243.61.201
+1382030359.74 ThreadName:T2 Count:4 ExternalIP:162.243.61.214
+1382030364.3 ThreadName:T2 Count:6 ExternalIP:162.243.61.201
+1382030368.77 ThreadName:T1 Count:4 ExternalIP:162.243.61.214
+1382030373.28 ThreadName:T2 Count:5 ExternalIP:162.243.61.214
+1382030377.73 ThreadName:T0 Count:7 ExternalIP:162.243.61.214
+1382030382.29 ThreadName:T2 Count:6 ExternalIP:162.243.61.214
+1382030386.81 ThreadName:T1 Count:5 ExternalIP:162.243.61.214
+1382030391.2 ThreadName:T2 Count:7 ExternalIP:162.243.61.201
+1382030395.92 ThreadName:T0 Count:4 ExternalIP:162.243.61.201
+1382030400.67 ThreadName:T1 Count:2 ExternalIP:162.243.61.201
+1382030405.19 ThreadName:T2 Count:8 ExternalIP:162.243.61.201
+1382030409.73 ThreadName:T0 Count:5 ExternalIP:162.243.61.201
+1382030414.13 ThreadName:T2 Count:9 ExternalIP:162.243.61.201
+1382030418.61 ThreadName:T0 Count:8 ExternalIP:162.243.61.214
+1382030423.03 ThreadName:T1 Count:6 ExternalIP:162.243.61.214
+1382030427.56 ThreadName:T2 Count:7 ExternalIP:162.243.61.214
+1382030432.23 ThreadName:T1 Count:3 ExternalIP:162.243.61.201
+1382030436.66 ThreadName:T0 Count:9 ExternalIP:162.243.61.214
+1382030441.34 ThreadName:T1 Count:7 ExternalIP:162.243.61.214
+1382030446.03 ThreadName:T1 Count:4 ExternalIP:162.243.61.201
+1382030450.63 ThreadName:T0 Count:6 ExternalIP:162.243.61.201
+1382030455.27 ThreadName:T1 Count:5 ExternalIP:162.243.61.201
+1382030459.77 ThreadName:T0 Count:7 ExternalIP:162.243.61.201
+1382030464.34 ThreadName:T1 Count:8 ExternalIP:162.243.61.214
+1382030469.02 ThreadName:T2 Count:8 ExternalIP:162.243.61.214
+1382030473.29 ThreadName:T1 Count:6 ExternalIP:162.243.61.201
+1382030477.72 ThreadName:T2 Count:9 ExternalIP:162.243.61.214
+1382030482.23 ThreadName:T1 Count:7 ExternalIP:162.243.61.201
+1382030486.77 ThreadName:T1 Count:9 ExternalIP:162.243.61.214
+1382030491.25 ThreadName:T1 Count:8 ExternalIP:162.243.61.201
+1382030495.8 ThreadName:T0 Count:8 ExternalIP:162.243.61.201
+1382030500.14 ThreadName:T1 Count:9 ExternalIP:162.243.61.201
+1382030504.69 ThreadName:T0 Count:9 ExternalIP:162.243.61.201
+^CTraceback (most recent call last):
+  File "master.py", line 52, in <module>
+    main()
+  File "master.py", line 49, in main
+    run_server()
+  File "master.py", line 41, in run_server
+    client, _ = s.accept()
+  File "/usr/lib/python2.7/socket.py", line 202, in accept
+    sock, addr = self._sock.accept()
+KeyboardInterrupt
