@@ -8,13 +8,14 @@ Received data is printed on stdout.
 
 import redis
 import socket
+import const
 
 #: Number of connections/counter value
 LIMIT = 1
 
 def prepare():
     """Prepares counter"""
-    r = redis.StrictRedis()
+    r = redis.StrictRedis(host=const.REDIS_HOST)
     r.delete('sem')
     for _ in range(LIMIT):
         r.lpush('sem', 1)

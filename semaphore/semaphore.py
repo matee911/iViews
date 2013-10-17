@@ -10,6 +10,7 @@ worker could be initialized with different value.
 import threading
 import time
 import redis
+import const
 
 # pylint: disable=R0924,W0212
 class DistributedSemaphore(threading._Semaphore):
@@ -17,7 +18,7 @@ class DistributedSemaphore(threading._Semaphore):
     which uses redis as a master state controller"""
     def __init__(self):
         super(DistributedSemaphore, self).__init__(self)
-        self.redis = redis.StrictRedis()
+        self.redis = redis.StrictRedis(host=const.REDIS_HOST)
 
     def acquire(self, blocking=True):
         acquired = False

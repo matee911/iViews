@@ -7,6 +7,7 @@ import random
 import semaphore
 import socket
 import urllib2
+import const
 
 def whatsmyip():
     req = urllib2.Request('http://ifconfig.me', None,
@@ -16,7 +17,7 @@ WHATS_MY_IP = whatsmyip()
 
 def slow_socket(msg):
     sck = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sck.connect(('localhost', 7000))
+    sck.connect((const.MASTER_HOST, 7000))
     for c in msg:
         sck.send(c)
         time.sleep(random.randint(5, 9)/100)
