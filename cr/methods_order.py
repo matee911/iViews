@@ -13,6 +13,4 @@ class Vectorizer:
         return v
 
     def _vectorize_row(self, row):
-        if not hasattr(self, '_sum'):
-            raise AttributeError('Method fit() must be applied first')
-        return self._fun(row)
+        return self._fun(self._sum, row)
