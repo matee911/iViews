@@ -14,3 +14,8 @@ class Vectorizer:
 
     def _vectorize_row(self, row):
         return self._fun(self._sum, row)
+
+if __name__ == '__main__':
+    v = Vectorizer(lambda s, r: 1)
+    v.transform([1, 2, 3])
+    v.fit({'apple': 1, 'orange': 2})
