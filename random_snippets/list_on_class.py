@@ -1,28 +1,28 @@
 # coding: utf-8
 
 
-class Foo(object):
+class Cls(object):
     events = []
 
-foo = Foo()
-foo.events.append(1)
+instance = Cls()
+instance.events.append(1)
 
-print foo.events    # => [1]
-print Foo.events    # => [1]
+print(instance.events)      # => [1]
+print(Cls.events)           # => [1]
 
-foo.events = []
-print foo.events    # => []
-print Foo.events    # => [1]
+instance.events = []
+print(instance.events)      # => []
+print(Cls.events)           # => [1]
 
-foo.events.append(2)
-print foo.events    # => [2]
-print Foo.events    # => [1]
+instance.events.append(2)
+print(instance.events)      # => [2]
+print(Cls.events)           # => [1]
 
-foo = Foo()
-foo.events.append(3)
-print foo.events    # => [1, 3]
-print Foo.events    # => [1, 3]
+instance = Cls()
+instance.events.append(3)
+print(instance.events)      # => [1, 3]
+print(Cls.events)           # => [1, 3]
 
-foo.events[:] = []
-print foo.events    # => []
-print Foo.events    # => []
+instance.events[:] = []
+print(instance.events)      # => []
+print(Cls.events)           # => []
